@@ -17,3 +17,4 @@ end
 
 puts direBonjour("jocelyn")
 salutation("jocelyn", "Coucou")
+reorganiser_list
