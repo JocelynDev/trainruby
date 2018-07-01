@@ -1,12 +1,5 @@
-eleves = [
-    {note: 15, nom: 'Jocelyn'},
-    {note: 15, nom: 'Nicolas'},
-    {note: 4, nom: 'Luka'}
-]
-
 class Eleve
-
-    def initialize(nom, age)
+    def initialize(nom, age)  
         @nom = nom
         @age = age
     end
