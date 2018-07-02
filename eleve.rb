@@ -12,7 +12,7 @@ class Eleve
         if(@age >= 18)
             puts "#{@nom} est majeur !"
         else
-            puts "#{nom} n'est pas majeur.."
+            puts "#{nom} n'est pas majeur..." 
         end
     end
 end
