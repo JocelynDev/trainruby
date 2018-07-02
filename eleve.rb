@@ -1,22 +1,39 @@
-class Eleve
-    def initialize(nom, age)  
-        @nom = nom
-        @age = age
+module Jocelyn
+    class Eleve
+        attr_reader :noteeleve, :nom
+        def initialize(nom)
+            @nom = nom
+            @noteeleve = []
+        end
+    
+        def ajouterNote(note)
+            noteeleve.push(note)
+        end
+    
+        def moyenne?
+            moyenne = @noteeleve.sum / @noteeleve.count
+            if moyenne >= 10
+                return true
+            else
+                return false    
+            end   
+        end
+    
+        def moyenne
+            return moyenne = @noteeleve.sum / @noteeleve.count
+        end                
+    
     end
-
-    def bonjour
-        puts "Bonjour je suis #{@nom} et j'ai #{@age} ans."
-    end
-
-    def isMajeur
-        if(@age >= 18)
-            puts "#{@nom} est majeur !"
-        else
-            puts "#{nom} n'est pas majeur..." 
+    
+    class Delegue <  Eleve
+        def moyenne
+            moyenne = super
+            moyenne + 1
+        end
+    
+        def ajouterNote(note)
+    
         end
     end
+    
 end
-
-eleve1 = Eleve.new("Jocelyn", 19)
-eleve1.bonjour
-eleve1.isMajeur

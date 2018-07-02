@@ -1,5 +1,5 @@
 class Eleve
-    attr_reader :noteeleve
+    attr_reader :noteeleve, :nom
     def initialize(nom)
         @nom = nom
         @noteeleve = []
@@ -24,10 +24,21 @@ class Eleve
 
 end
 
+class Delegue <  Eleve
+    def moyenne
+        moyenne = super
+        moyenne + 1
+    end
+
+    def ajouterNote(note)
+
+    end
+end
+
+#d.class = renvoie la classe #d.superclass = renvoie la classe mère
+
+d = Delegue.new("Nicolas")
+d.ajouterNote(13)
 eleve = Eleve.new("Jocelyn")
-eleve.ajouterNote(8)
-eleve.ajouterNote(13)
-eleve.ajouterNote(5)
-puts eleve.moyenne
-puts eleve.moyenne?
-puts eleve.noteeleve.inspect
+puts d.nom
+puts d.moyenne
